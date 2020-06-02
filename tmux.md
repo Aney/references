@@ -1,45 +1,78 @@
 # Tmux from terminal
-tmux
-tmux attach -s <SessionName>
-tmux new -t <SessionName>
+
+    tmux
+    tmux attach -s <SessionName>
+    tmux new -t <SessionName>
 
 # Prefix/Mod Key
-Ctrl + b
+
+    Ctrl + b
 
 # Detach Session
+
 Keep the session running while not focussed
-	`Mod d`
+
+    Mod d
 
 # Tmux Panes
+
 Split Right
+
     Mod %
+
 Split Down
-	Mod "
+
+    Mod "
+
 Kill pane
-	Ctrl + d
+
+    Ctrl + d
+
 ## Pane Movement
+
 Move between panes
-	Mod <arrow keys>
-	Mod q <number>
+
+    Mod <arrow keys>
+    Mod q <number>
+
 Resize panes
-	(Hold) Mod + (press) <Arrow Key>
+
+    (Hold) Mod + (press) <Arrow Key>
 
 # Windows
+
 Create a new window
-	Mod c
+
+    Mod c
+
 Rename a window
-	Mod ,
+
+    Mod ,
+
 Kill window
-	Mod &
+
+    Mod &
+
 ## Window Movement
-Switch between windows
-	Mod <window number>
-	Mod n/p 
+
+Switch between windows by number
+
+    Mod <window number>
+
+Switch between next/previous windows
+
+    Mod n/p 
 
 # Sessions
+
 Create a new session
-	Mod :new
+
+    Mod :new
+
 Rename a session
-	Mod $
+
+    Mod $
+
 Show existing sessions
-	Mod s
+
+    Mod s

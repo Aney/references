@@ -1,53 +1,92 @@
 # Mod Key
-	alt
+
+    alt
 
 # Show/Hide bar
-	alt + b
+
+    alt + b
 
 # Windows
+
 Start a terminal Window
-	mod + shift + enter
+
+    mod + shift + enter
+
 Start a window
-	mod + p
+
+    mod + p
+
 Move between windows
-	alt + j/k
+
+    alt + j/k
+
 Kill window
-	alt + shift + c
+
+    alt + shift + c
 
 # Master Window
+
 Increase master size
-	alt + l
+
+    alt + l
+
 Decrease master size
-	alt + h
+
+    alt + h
+
 Zoom window/Move to master
-	alt + Enter
+
+    alt + Enter
+
 Increment master (the amount of windows in the master area)
-	alt + i
+
+    alt + i
+
 Decrement master
-	alt + d
+
+    alt + d
 
 # Layouts
+
 Tiled windows (default)
-	alt + t
+
+    alt + t
+
 Focus window/Zoom/Only window visible
-	alt + m
+
+    alt + m
+
 Floating windows
-	alt + f
+
+    alt + f
+
 Switch between previous layout
-	alt + space
+
+    alt + space
 
 # Tags/desktops
+
 Switch between tags
-	alt + <1..9>
+
+    alt + <1..9>
+
 Move a window to another tag
-	alt + shift + <1..9>
+
+    alt + shift + <1..9>
 
 # Multiple Monitors
+
 Switch between monitors
-	alt + , .
+
+    alt + , .
+
 Move a window to another monitor
-	alt + shift + , .
+
+    alt + shift + , .
 
 # Shutdown
+
 Clean shutdown
-	alt + shift + q
+
+    alt + shift + q
+
