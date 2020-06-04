@@ -27,13 +27,15 @@ or while selecting a visual block.
 `h,l` - Left, Right  
 `j,k` - Down, Up
 
-`0` - Go to the beginning of the line
+`0` - Jump to the beginning of the line
 
-`$` - Go to the end of the line
+`$` - Jump up the end of the line
 
-`gg` - Go to the top of the file
+`gg` - Jump to the top of the file
 
-`G` - Go to the bottom of the file
+`G` - Jump to the bottom of the file
+
+`:5` - Jump to line 5
 
 `{ }` - Jump up and down paragraphs
 
@@ -46,17 +48,28 @@ or while selecting a visual block.
 `5w` - Move forwards 5 words, this also works with most commands
 
 # Deleting and Clipboard
+
 `x` - Delete/cut character under cursor
-`d` - Delete/cut selection
+
+`d` - Delete/cut selection  
 `dd` - Delete the line
-`d5d` - Delete 5 lines
+
+`d5d` - Delete 5 lines  
 `d$` - Delete to end of the line
 
-`y` - Yank/copy selection
+`y` - Yank/copy selection  
 `yy` - Yank the line
 
-`p` - Put/Paste at cursor
+`p` - Put/Paste at cursor  
 `P` - Put/Paste after cursor
+
+# Editor Readibility(?)
+
+`zz` - Center the current line in the editor
+
+`zt` - Align the current line to the top of VIM
+
+`zb` - Align the current line to the bottom of VIM
 
 # Search
 
