@@ -38,3 +38,13 @@ Add the new file, or the changed file/directory
 Commit with a message; What and why was it changed
 
     git commit -m 
+
+# Check which files have been changed since last commit
+
+To check the files themselves
+
+    git status
+
+To check the contents of the files, from last commit
+
+    git diff HEAD
