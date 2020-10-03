@@ -160,11 +160,19 @@ This is the "change and replace" of vim. It makes use of regex.
 Vim can open numerous files/buffers at the same time.    
 These can be in tab like buffers, or in a splitscreen view.
 
-:r 
-:e filename
-:bn
-:bp
-:bd
+## Buffers
+
+`:r`
+`:e filenam`
+`:bn`
+`:bp`
+`:bd`
+`:ls` - Shows the buffers
+`Ctrl+6` - Switches between the buffers
+`#Ctrl+6` - Switches to the buffer number
+
+## Splits 
+
 :split 
 :vs
 
