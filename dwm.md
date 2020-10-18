@@ -90,3 +90,16 @@ Clean shutdown
 
     alt + shift + q
 
+# Patches
+
+Download the patch from suckless.org, etc.
+
+    patch < file.diff
+
+Preference is to put it into a patches/ folder within the repo.
+
+## Make a custom patch
+
+Make the changes to the code then compare the new and original files.
+
+    diff -u OriginalFile UpdatedFile > PatchFile
