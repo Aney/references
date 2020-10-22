@@ -48,3 +48,9 @@ To check the files themselves
 To check the contents of the files, from last commit
 
     git diff HEAD
+
+# Add new or missing remote repository for push and pull requests
+
+If you only use the one it'll likely be origin, otherwise name it what you want.
+
+    git remote add <repository>  <url>
