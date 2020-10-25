@@ -1,0 +1,8 @@
+wpa_passphrase <network> <password> > /etc/wpa_supplicant/wpa_supplicant.conf
+
+
+sudo ip link set dev <device> down // up
+
+systemctl restart wpa_supplicant.service
+
+
