@@ -20,3 +20,10 @@
 
 	docker container ls
 
+# No need for Sudo
+
+	sudo usermod -aG docker pi
+
+Shadow group reload
+
+	sg docker -c "bash"
