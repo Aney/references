@@ -1,0 +1,72 @@
+# https://stackoverflow.com/questions/6414227/how-to-serve-git-through-http-via-nginx-with-user-password/17553364#answer-17553364
+server {
+	listen 80 ;
+	listen [::]:80 ;
+
+	if ($host = git.aney.co.uk) {
+		return 301 https://$host$request_uri ;
+	}
+
+	if ($host = www.git.aney.co.uk) {
+		return 301 https://$host$request_uri ;
+	}
+	return 404;
+}
+
+server {
+	listen 443 ssl;
+	listen [::]:443;
+	server_name git.aney.co.uk ; 
+
+	root /usr/share/gitweb/;
+
+	# Remove auth_* if you don't want HTTP Basic Auth
+	#auth_basic "example Git";
+	#auth_basic_user_file /etc/nginx/.htpasswd;
+
+	# static repo files for cloning over https
+	location ~ ^.*\.git/objects/([0-9a-f]+/[0-9a-f]+|pack/pack-[0-9a-f]+.(pack|idx))$ {
+		root /srv/git/;
+	}
+
+	# requests that need to go to git-http-backend
+	location ~ ^.*\.git/(HEAD|info/refs|objects/info/.*|git-(upload|receive)-pack)$ {
+		root /srv/git/;
+
+		fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+		fastcgi_param SCRIPT_FILENAME   /usr/lib/git-core/git-http-backend;
+		fastcgi_param PATH_INFO         $uri;
+		fastcgi_param GIT_PROJECT_ROOT  $document_root;
+		fastcgi_param GIT_HTTP_EXPORT_ALL "";
+		fastcgi_param REMOTE_USER $remote_user;
+		include fastcgi_params;
+	}
+
+	# Remove all conf beyond if you don't want Gitweb
+	try_files $uri @gitweb;
+	location @gitweb {
+		fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+		fastcgi_param SCRIPT_FILENAME   /usr/share/gitweb/gitweb.cgi;
+		fastcgi_param PATH_INFO         $uri;
+		fastcgi_param GITWEB_CONFIG     /etc/gitweb.conf;
+		include fastcgi_params;
+	}
+
+	#location /index.cgi {
+		#root /usr/share/gitweb/;
+		#include fastcgi_params;
+		#gzip off;
+		#fastcgi_param SCRIPT_NAME $uri;
+		#fastcgi_param GITWEB_CONFIG /etc/gitweb.conf;
+		#fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+	#}
+
+	#location / {
+		#root /usr/share/gitweb/;
+		#index index.cgi;
+	#}
+
+    ssl_certificate /etc/letsencrypt/live/git.aney.co.uk/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/git.aney.co.uk/privkey.pem; # managed by Certbot
+}
+
